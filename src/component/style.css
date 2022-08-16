@@ -1,0 +1,258 @@
+:root {
+    --surface-color: #fff;
+    --curve: 20;
+    
+}
+
+* {
+    box-sizing: border-box;
+   
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: #3e356bcb;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 5rem 5vw;
+    padding: 0;
+    list-style-type: none;
+}
+
+.card {
+    position: relative;
+    display: block;
+    height: 100%;
+    border-radius: calc(var(--curve) * 1px);
+    overflow: hidden;
+    text-decoration: none;
+}
+.card__header-text{
+    width: 200px;
+}
+
+.card__image {
+    width: 100%;
+    height: auto;
+}
+
+.card__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    border-radius: calc(var(--curve) * 1px);
+    background-color: var(--surface-color);
+    transform: translateY(100%);
+    transition: .2s ease-in-out;
+}
+
+.card:hover .card__overlay {
+    transform: translateY(0);
+}
+
+.card__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+    border-radius: calc(var(--curve) * 1px) 0 0 0;
+    background-color: var(--surface-color);
+    transform: translateY(-100%);
+    transition: .2s ease-in-out;
+}
+
+.card__arc {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    z-index: 1;
+}
+
+.card__arc path {
+    fill: var(--surface-color);
+    
+}
+
+.card:hover .card__header {
+    transform: translateY(0);
+}
+
+.card__thumb {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.card__title {
+    font-size: 1em;
+    margin: 0 0 .3em;
+    color: #6A515E;
+}
+
+.card__tagline {
+    display: block;
+    margin: 1em 0;
+    font-family: "MockFlowFont";
+    font-size: .8em;
+    color: #D7BDCA;
+}
+
+.card__status {
+    font-size: .8em;
+    color: #D7BDCA;
+}
+
+.card__description {
+    padding: 0 2em 2em;
+    margin: 0;
+    color: #D7BDCA;
+    font-family: "MockFlowFont";
+    overflow: hidden;
+}
+.searchBox {
+    position: absolute;
+    top: 0;
+    left: 37%;
+    transform: translate(-50%, 50%);
+    background: #6f7c8f;
+    height: 54px;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+/* .searchBox:hover>.searchInput {
+    width: 240px;
+    padding: 0 6px;
+} */
+
+.searchBox:hover>.searchButton {
+    background: white;
+    color: #2f3640;
+}
+
+.searchButton {
+    color: white;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.searchInput {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 35px;
+    
+
+}
+
+@media screen and (max-width: 620px) {
+    .searchBox:hover>.searchInput {
+        width: 150px;
+        padding: 0 6px;
+    }
+}
+.container{
+   display: flex;
+   flex-direction: column;
+   margin-top: 80px;
+padding-bottom: 60px;
+}
+.footer {
+    left: 0;
+    bottom: 0;
+    right: 0; 
+    background-color: black;
+    color: white;
+    text-align: center;
+    height: 50px;
+    width: 100vw;
+    margin-bottom: 0;
+    margin-right: 2em;
+}
+
+.myButton {
+    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    background: linear-gradient(to top, #2e257e 5%, #aca6e1 100%);
+    background-color: #ededed;
+    border-radius: 6px;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    cursor: pointer;
+    color: #fcfcfc;
+    font-size: 15px;
+    font-weight:lighter;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffffff;
+}
+
+.myButton:hover {
+    background: linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+    background-color: #dfdfdf;
+    color:#2e257e
+}
+
+.myButton:active {
+    position: relative;
+    top: 1px;
+}
+
+.container {
+    display: grid;
+    margin-top: 0;
+    margin-left: 5px;
+    grid-template-rows: auto auto;
+    grid-template-columns: 41% 70%;
+    grid-template-areas: "topp topp"
+            "image more";
+    gap: 8px 6px;
+    
+}
+
+.more {
+    grid-area: more;
+    word-wrap: break-word;
+}
+
+.image {
+    grid-area: image;
+}
+.top{
+    grid-area: topp ;
+    text-align: center;
+}
+@media screen and (max-width: 620px) {
+    .top {
+        font-size: 10px;
+        padding: 0 6px;
+    }
+    .footer{
+        position: absolute;
+        bottom: -74px;
+        width: 111vw;
+    }
+}
