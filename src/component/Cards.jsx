@@ -19,7 +19,7 @@ export const Cards=({props})=>{
                   <h3 className="card__title">{props.original_title}</h3>
                   <span className="card__status">{props.original_language}</span>
                 </div>
-                <Link to={props.original_title} state={props}>
+                <Link to={"/details"} state={props}>
                   
                 <button className="myButton" >More</button>
                
