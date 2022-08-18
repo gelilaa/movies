@@ -1,6 +1,6 @@
 :root {
     --surface-color: #fff;
-    --curve: 20;
+    --curve: 10;
     
 }
 
@@ -10,10 +10,11 @@
 }
 
 body {
-    font-family: 'Noto Sans JP', sans-serif;
-    background-color: #3e356bcb;
+    font-family:  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
     overflow-x: hidden;
     height: 100%;
+    
 }
 
 .cards {
@@ -29,7 +30,7 @@ body {
     position: relative;
     display: block;
     height: 100%;
-    border-radius: calc(var(--curve) * 1px);
+    border-radius: 13px; 
     overflow: hidden;
     text-decoration: none;
 }
@@ -123,19 +124,19 @@ body {
 }
 .searchBox {
     position: absolute;
-    top: 0;
-    left: 37%;
+    top: -3px;
+    left: 11%;
     transform: translate(-50%, 50%);
-    background: #6f7c8f;
+    background: #4c678d;
     height: 54px;
-    border-radius: 40px;
+    border-radius: 13px;
     padding: 10px;
 }
 
-/* .searchBox:hover>.searchInput {
+ .searchBox:hover>.searchInput {
     width: 240px;
     padding: 0 6px;
-} */
+} 
 
 .searchBox:hover>.searchButton {
     background: white;
@@ -143,7 +144,7 @@ body {
 }
 
 .searchButton {
-    color: white;
+    color: rgb(57, 57, 57);
     float: right;
     width: 40px;
     height: 40px;
@@ -169,12 +170,7 @@ body {
 
 }
 
-@media screen and (max-width: 620px) {
-    .searchBox:hover>.searchInput {
-        width: 150px;
-        padding: 0 6px;
-    }
-}
+
 .container{
    display: flex;
    flex-direction: column;
@@ -185,7 +181,7 @@ padding-bottom: 60px;
     left: 0;
     bottom: 0;
     right: 0; 
-    background-color: black;
+    background-color: inherit;
     color: white;
     text-align: center;
     height: 50px;
@@ -196,24 +192,21 @@ padding-bottom: 60px;
 
 .myButton {
     box-shadow: inset 0px 1px 0px 0px #ffffff;
-    background: linear-gradient(to top, #2e257e 5%, #aca6e1 100%);
-    background-color: #ededed;
+    background-color: #2f3640;
     border-radius: 6px;
     border: 1px solid #dcdcdc;
     display: inline-block;
     cursor: pointer;
     color: #fcfcfc;
     font-size: 15px;
-    font-weight:lighter;
     padding: 6px 24px;
     text-decoration: none;
     text-shadow: 0px 1px 0px #ffffff;
 }
 
 .myButton:hover {
-    background: linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
     background-color: #dfdfdf;
-    color:#2e257e
+    color:#2e257e;
 }
 
 .myButton:active {
@@ -229,17 +222,24 @@ padding-bottom: 60px;
     grid-template-columns: 41% 70%;
     grid-template-areas: "topp topp"
             "image more";
-    gap: 8px 6px;
+    gap: 8px 24px;
     
 }
 
 .more {
     grid-area: more;
-    word-wrap: break-word;
+    margin-right: 240px;
+    
+   
+}
+.more p{
+word-wrap: break-word;
+
 }
 
 .image {
     grid-area: image;
+    position: relative;
 }
 .top{
     grid-area: topp ;
@@ -256,3 +256,48 @@ padding-bottom: 60px;
         width: 111vw;
     }
 }
+.option{
+    text-align: right;
+    margin: 27px 10px 10px 15px;
+
+}
+.option select{
+    width: 265px;
+    height: 50px;
+    border-radius: 10px;
+    background: #4c678d;
+
+}
+.option select:hover{
+    width: 340px;
+    padding: 2px 6px;
+}
+
+
+/* @media (min-width: 640px) {
+.searchBox {
+        top: 2%;
+        left: 30%;
+    }
+} */
+
+/* @media (min-width: 768px) {
+
+    
+} */
+
+
+ /* @media (min-width: 1024px) {
+.searchBox {
+    top: 2%;
+    left: 30%;
+        
+    }
+    
+
+} */
+
+/* @media (min-width: 1200px) {
+
+    ...
+}  */

@@ -5,8 +5,9 @@ import { User } from "./User.jsx";
 import { Card } from "./Card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
 export const Search =()=>{
-  const id = Math.floor(Math.random() * 100)
+const id = Math.floor(Math.random() * 100)
 const[input,SetInput]=useState('');
 const [output,SetOutput]=useState([])
 const [hidden, setHidden] = useState(false);
@@ -18,13 +19,9 @@ const [hidden, setHidden] = useState(false);
  
 
  const handelEvent= async(e)=>{
-
 if(!input) return alert("write something")
-
 setHidden(true)
-  
 const inData = await searchApi(input);
-
   SetOutput(inData)
  
 
@@ -43,12 +40,9 @@ const inData = await searchApi(input);
     </div>
 
  <ul className="cards">
- 
   <User key={id} filteredPersons={output} />
-     
 </ul> 
   
-
 </>
     )
 }

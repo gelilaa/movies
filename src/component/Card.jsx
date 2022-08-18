@@ -1,4 +1,3 @@
-
 import { useQuery } from 'react-query';
 import { fetchApi } from '../api/main.js';
 import "./style.css"

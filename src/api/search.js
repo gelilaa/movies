@@ -1,4 +1,3 @@
-
 export const searchApi = async (name) => {
   //const apiKey = process.env.REACT_APP_API_KEY;
   const data = await fetch(
